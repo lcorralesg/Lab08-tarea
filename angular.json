@@ -24,8 +24,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendor/fontawesome/css/font-awesome.css",
+              "src/assets/vendor/animate.css/animate.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.css",
+              "src/assets/styles/pe-icons/pe-icon-7-stroke.css",
+              "src/assets/styles/pe-icons/helper.css",
+              "src/assets/styles/stroke-icons/style.css",
+              "src/assets/styles/style.css"
             ],
             "scripts": []
           },
@@ -94,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "cde9da66-c08b-4058-8548-229b50367ac8"
   }
 }

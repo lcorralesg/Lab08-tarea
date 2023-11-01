@@ -1,0 +1,75 @@
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group"><label class="col-sm-2 control-label">Código</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" 
+                        placeholder="Código" [(ngModel)]="productoSeleccionado.codigo" name="codigo">
+                    </div>
+                </div>
+                <div class="form-group"><label class="col-sm-2 control-label">Descripción</label>
+                    <div class="col-sm-10"><input type="text" class="form-control"
+                        placeholder="Descripcion" [(ngModel)]="productoSeleccionado.descripcion" name="descripcion">
+                    </div>
+                </div>
+                <div class="form-group"><label class="col-sm-2 control-label">Precio</label>
+                    <div class="col-sm-10"><input type="text" class="form-control"
+                        placeholder="Precio" [(ngModel)]="productoSeleccionado.precio" name="precio">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="btn btn-default btn-m" (click)="AnadirOEditar()">
+                            Guardar
+                        </button>
+                        <button 
+                        *ngIf="productoSeleccionado.codigo !== undefined && productos.indexOf(productoSeleccionado) !== -1"
+                        class="btn btn-danger btn-m pull-right" (click)="eliminar()">
+                        Eliminar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-filled">
+            <div class="panel-heading">
+                Productos
+                <br>
+                Selecciona un producto para editarlo o eliminarlo
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let producto of productos; let i = index"
+                            [class.active]="productoSeleccionado === producto"
+                            (click)="seleccionarProducto(producto)">
+                            <td>{{i+1}}</td>
+                            <td>{{producto.codigo}}</td>
+                            <td>{{producto.descripcion}}</td>
+                            <td>{{producto.precio}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
